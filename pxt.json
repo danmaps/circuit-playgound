@@ -1,0 +1,24 @@
+{
+    "name": "servo sanity",
+    "description": "",
+    "dependencies": {
+        "circuit-playground": "*",
+        "crickit": "github:adafruit/pxt-crickit#v0.0.32"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.6.8",
+        "targetId": "adafruit"
+    },
+    "supportedTargets": [
+        "adafruit"
+    ],
+    "preferredEditor": "tsprj"
+}
