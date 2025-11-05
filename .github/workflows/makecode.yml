@@ -1,29 +1,25 @@
 name: MakeCode
-
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x]
-
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm install
+          node-version: '20'   # LTS is fine too
+
+      # Optional but stabilizing for some native deps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install MKC CLI
+        run: npm i -g makecode
+
+      - name: Build MakeCode project
+        working-directory: ./<path-with-pxt.json>
         run: |
-          npm install -g pxt
-          pxt target adafruit
-      - name: build
-        run: |
-          pxt install
-          pxt build --cloud
-        env:
-          CI: true
+          mkc install
