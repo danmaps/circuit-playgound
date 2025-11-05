@@ -10,7 +10,7 @@ This repository can be added as an **extension** in MakeCode.
 * click on **Extensions** under the gearwheel menu
 * search for **https://github.com/danmaps/circuit-playgound** and import
 
-## Edit this project ![Build status badge](https://github.com/danmaps/circuit-playgound/workflows/MakeCode/badge.svg)
+## Edit this project
 
 To edit this repository in MakeCode.
 
